@@ -3,7 +3,8 @@ import requests
 import aiohttp
 import yt_dlp
 from pyrogram import filters
-from AleXa.services.pyrogram import pbot as Client
+from TamilBots.alexa import get_arg
+from TamilBots import app as Client, LOGGER
 from youtube_search import YoutubeSearch
 
 def time_to_seconds(time):
