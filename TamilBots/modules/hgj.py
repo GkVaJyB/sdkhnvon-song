@@ -11,7 +11,7 @@ def time_to_seconds(time):
     stringt = str(time)
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(':'))))
 
-@Client.on_message(filters.command('song') & ~filters.private & ~filters.channel)
+@Client.on_message(filters.command('song') & ~filters.channel)
 def song(client, message):
     user_id = message.from_user.id 
     user_name = message.from_user.first_name 
@@ -54,7 +54,7 @@ def song(client, message):
         message.reply_audio(audio_file, caption=rep, thumb=thumb_name, parse_mode='md', title=title, duration=dur)
         m.delete()
     except Exception as e:
-        m.edit('AleXa Not give Permission fot Giving You Song From Sever...')
+        m.edit('**Have Some Trubble to Download this Song..**')
         print(e)
     try:
         os.remove(audio_file)
