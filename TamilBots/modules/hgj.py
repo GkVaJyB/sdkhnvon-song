@@ -32,7 +32,6 @@ def song(client, message):
                     f"❌ song longer than 8 minute(s) aren t allowed, the provided video is {duration} minute(s)"
                 )
                 return
-    try:
         results = YoutubeSearch(query, max_results=1).to_dict()
         link = f"https://youtube.com{results[0]['url_suffix']}"
         #print(results)
