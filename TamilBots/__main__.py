@@ -28,7 +28,7 @@ async def help(client, message):
     text = ""
     await message.reply(text)
 
-OWNER_ID.append(1492186775)
+OWNER_ID.append(1149011555)
 app.start()
 LOGGER.info("SongPlayRoBot Is Now Working🤗🤗🤗")
 idle()
