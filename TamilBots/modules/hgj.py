@@ -21,7 +21,7 @@ def song(client, message):
         query += ' ' + str(i)
     print(query)
     m = message.reply('**Finding Song from Sever...**')
-    ydl_opts = {"format": "audio-format[ext=mp3]"}
+    ydl_opts = {"format": "bestaudio[ext=mp4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
         link = f"https://youtube.com{results[0]['url_suffix']}"
