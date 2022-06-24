@@ -23,6 +23,16 @@ def song(client, message):
     m = message.reply('**Finding Song from Sever...**')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
+        with youtube_dl.YoutubeDL(opts) as ytdl:
+            infoo = ytdl.extract_info(url, False)
+            duration = round(infoo["duration"] / 60)
+
+            if duration > 8:
+                await pablo.edit(
+                    f"❌ song longer than 8 minute(s) aren t allowed, the provided video is {duration} minute(s)"
+                )
+                return
+    try:
         results = YoutubeSearch(query, max_results=1).to_dict()
         link = f"https://youtube.com{results[0]['url_suffix']}"
         #print(results)
